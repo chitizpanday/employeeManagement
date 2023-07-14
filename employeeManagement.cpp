@@ -5,11 +5,12 @@ struct employeeMgmt{
    std::string name, email;
 };
 int userChoice;
+int total=0;
 employeeMgmt object[20];
 void enterData(){
 std::cout<<"how many employee records you want to enter: ";
 std::cin>>userChoice;
-for(int i=0; i<userChoice; i++){
+for(int i=total; i<total+userChoice; i++){
    std::cout<<"Please enter the record of employee "<<i+1<<std::endl;
    std::cout<<"employee ID: ";
    std::cin>>object[i].employeeId;
@@ -20,6 +21,7 @@ for(int i=0; i<userChoice; i++){
    std::cout<<"employee email: ";
    std::cin>>object[i].email;
 }
+total=total+userChoice;
 };
 void showData(){
    for (int i = 0; i < userChoice; i++)
