@@ -1,14 +1,53 @@
 #include<iostream>
 #include<windows.h>
+struct employeeMgmt{
+   int employeeId, salary;
+   std::string name, email;
+};
+int userChoice;
+employeeMgmt object[20];
 void enterData(){
-
+std::cout<<"how many employee records you want to enter: ";
+std::cin>>userChoice;
+for(int i=0; i<userChoice; i++){
+   std::cout<<"Please enter the record of employee "<<i+1<<std::endl;
+   std::cout<<"employee ID: ";
+   std::cin>>object[i].employeeId;
+   std::cout<<"employee salary: ";
+   std::cin>>object[i].salary;
+   std::cout<<"employee name: ";
+   std::cin>>object[i].name;
+   std::cout<<"employee email: ";
+   std::cin>>object[i].email;
+}
 };
 void showData(){
+   for (int i = 0; i < userChoice; i++)
+   {
+      std::cout<<"Showing the data of employee "<<i+1<<std::endl;
+      std::cout<<"employee ID: "<<object[i].employeeId<<std::endl;
+      std::cout<<"employee salary: "<<object[i].salary<<std::endl;
+      std::cout<<"employee name: "<<object[i].name<<std::endl;
+      std::cout<<"employee email: "<<object[i].email<<std::endl;
+
+   }
    
 };
 
 void searchData(){
-   
+   std::string custName;
+   std::cout<<"Provide the customer name you want to search for: \n";
+   std::cin>>custName;
+  for (int i = 0; i < userChoice; i++)
+  {
+    if(custName==object[i].name){
+      std::cout<<"The detail of "<<custName<<" :\n";
+      std::cout<<"employee ID: "<<object[i].employeeId<<std::endl;
+      std::cout<<"employee salary: "<<object[i].salary<<std::endl;
+      std::cout<<"employee email: "<<object[i].email<<std::endl;
+   }
+  }
+  
 };
 
 void updateData(){
@@ -53,7 +92,7 @@ int main(){
                <<"\n Enter 3 to Search Employee Data"
                <<"\n Enter 4 to Update Employee Data"
                <<"\n Enter 5 to Delete Employee Data"
-               <<"\n Enter 6 to Exit";
+               <<"\n Enter 6 to Exit \n";
       std::cin>>userChoice;
       switch (userChoice)
       {
