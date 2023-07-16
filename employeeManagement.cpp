@@ -24,7 +24,7 @@ for(int i=total; i<total+userChoice; i++){
 total=total+userChoice;
 };
 void showData(){
-   for (int i = 0; i < userChoice; i++)
+   for (int i = 0; i < total; i++)
    {
       std::cout<<"Showing the data of employee "<<i+1<<std::endl;
       std::cout<<"employee ID: "<<object[i].employeeId<<std::endl;
