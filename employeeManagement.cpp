@@ -53,7 +53,29 @@ void searchData(){
 };
 
 void updateData(){
-   
+   std::string custName;
+   std::cout<<"Provide the customer name you want to update the data for: \n";
+   std::cin>>custName;
+   for(int i=0; i<total; i++){
+      if(custName==object[i].name){
+         std::cout<<"the current record of " <<custName<<" is:\n";
+         std::cout<<"employee ID: "<<object[i].employeeId<<std::endl;
+         std::cout<<"employee salary: "<<object[i].salary<<std::endl;
+         std::cout<<"employee name: "<<object[i].name<<std::endl;
+         std::cout<<"employee email: "<<object[i].email<<std::endl;
+         std::cout<<"Please update the record for "<<custName<<std::endl;
+   std::cout<<"employee ID: ";
+   std::cin>>object[i].employeeId;
+   std::cout<<"employee salary: ";
+   std::cin>>object[i].salary;
+   std::cout<<"employee name: ";
+   std::cin>>object[i].name;
+   std::cout<<"employee email: ";
+   std::cin>>object[i].email;
+
+      }
+      else{std::cout<<"No record found for "<<custName<<std::endl;}
+   }
 };
 
 void deleteData(){
