@@ -2,7 +2,7 @@
 #include<windows.h>
 struct employeeMgmt{
    int employeeId, salary;
-   std::string name, email;
+   std::string name;
 };
 int userChoice;
 int total=0;
@@ -18,8 +18,6 @@ for(int i=total; i<total+userChoice; i++){
    std::cin>>object[i].salary;
    std::cout<<"employee name: ";
    std::cin>>object[i].name;
-   std::cout<<"employee email: ";
-   std::cin>>object[i].email;
 }
 total=total+userChoice;
 };
@@ -30,8 +28,6 @@ void showData(){
       std::cout<<"employee ID: "<<object[i].employeeId<<std::endl;
       std::cout<<"employee salary: "<<object[i].salary<<std::endl;
       std::cout<<"employee name: "<<object[i].name<<std::endl;
-      std::cout<<"employee email: "<<object[i].email<<std::endl;
-
    }
    
 };
@@ -40,13 +36,13 @@ void searchData(){
    std::string custName;
    std::cout<<"Provide the customer name you want to search for: \n";
    std::cin>>custName;
-  for (int i = 0; i < userChoice; i++)
+  for (int i = 0; i < total; i++)
   {
     if(custName==object[i].name){
       std::cout<<"The detail of "<<custName<<" :\n";
       std::cout<<"employee ID: "<<object[i].employeeId<<std::endl;
       std::cout<<"employee salary: "<<object[i].salary<<std::endl;
-      std::cout<<"employee email: "<<object[i].email<<std::endl;
+      std::cout<<"employee name: "<<object[i].name<<std::endl;
    }
   }
   
@@ -62,7 +58,6 @@ void updateData(){
          std::cout<<"employee ID: "<<object[i].employeeId<<std::endl;
          std::cout<<"employee salary: "<<object[i].salary<<std::endl;
          std::cout<<"employee name: "<<object[i].name<<std::endl;
-         std::cout<<"employee email: "<<object[i].email<<std::endl;
          std::cout<<"Please update the record for "<<custName<<std::endl;
    std::cout<<"employee ID: ";
    std::cin>>object[i].employeeId;
@@ -70,9 +65,6 @@ void updateData(){
    std::cin>>object[i].salary;
    std::cout<<"employee name: ";
    std::cin>>object[i].name;
-   std::cout<<"employee email: ";
-   std::cin>>object[i].email;
-
       }
       else{std::cout<<"No record found for "<<custName<<std::endl;}
    }
@@ -154,3 +146,4 @@ int main(){
    
    return 0;
 }
+wad up wad up!!
